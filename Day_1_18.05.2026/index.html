@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <title>Student registration Portal</title>
+    <link rel="StyleSheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Student Registration Portal</h1>
+        <nav>
+          <a href="#">Home</a>
+          <a href="#register">Register</a>
+        </nav>
+      </header>
+      <section class="hero">
+        <h2>Welcome all</h2>
+        <p>Register your data using this form</p>
+        <a href="#register" class="btn"> Register now </a>
+      </section>
+      <section id="register" class="form">
+        <h2>Registration form</h2>
+
+        <form>
+          <label>First name : </label>
+          <input type="text" placeholder="Enter your name" /><br />
+          <label>Last name : </label>
+          <input type="text" placeholder="Enter your last name" /><br />
+          <label>Age : </label>
+          <input type="number" placeholder="Enter your age" /><br />
+          <label>Email Address : </label>
+          <input type="email" placeholder="Enter your email Address" /><br />
+          <label>Password : </label>
+          <input type="password" placeholder="Enter your password" /><br />
+          <label>Date of birth : </label>
+          <input type="date" placeholder="Enter your DOB" /><br />
+          <label>Phone number : </label>
+          <input type="tel" /><br />
+          <label>Gender : </label>
+          <input type="radio" name="gender" />Male
+          <input type="radio" name="gender" />Female
+          <input type="radio" name="gender" />Other
+          <br />
+          <label>Department : </label>
+          <select>
+            <option>CSE</option>
+            <option>IT</option>
+            <option>CSBE</option>
+            <option>ECE</option>
+            <option>AIML</option>
+          </select>
+          <br />
+          <input type="submit" value="register" />
+        </form>
+      </section>
+    </div>
+  </body>
+</html>
