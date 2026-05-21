@@ -1,0 +1,95 @@
+.head {
+  font-size: 30px;
+  font-weight: 600;
+}
+.text {
+  font-size: 20px;
+  font-weight: 600;
+}
+.bold {
+  font-weight: 600;
+}
+.stro {
+  font-weight: 600;
+}
+.ital {
+  font-style: italic;
+}
+.emph {
+  font-style: oblique;
+}
+.und {
+  text-decoration: underline;
+}
+.dele {
+  text-decoration: line-through;
+}
+.smal {
+  font-size: smaller;
+}
+.mini {
+  font-size: xx-small;
+}
+.highl {
+  background-color: yellow;
+}
+.lis {
+  font-size: 30px;
+  font-weight: 600;
+}
+.uli {
+  font-size: 20px;
+  font-weight: 600;
+}
+.htm {
+  position: relative;
+  top: -5px;
+  font-size: 30px;
+  font-weight: 600;
+}
+.html {
+  margin-top: 0px;
+  padding-left: 30px;
+}
+.css {
+  margin-top: -20px;
+  padding-left: 30px;
+}
+.js {
+  margin-top: -20px;
+  padding-left: 30px;
+}
+.oli {
+  font-size: 20px;
+  font-weight: 600;
+}
+.desi {
+  margin-top: 0px;
+  padding-left: 30px;
+}
+.dev {
+  margin-top: 2px;
+  padding-left: 30px;
+}
+.dep {
+  margin-top: 4px;
+  padding-left: 30px;
+}
+.dli {
+  font-size: 20px;
+  font-weight: 600;
+}
+.cnt1 {
+  padding-left: 30px;
+}
+.tabl {
+  font-size: 30px;
+  font-weight: 600;
+}
+table,
+tr,
+td,
+th {
+  border: 1px solid;
+  border-collapse: collapse;
+}
