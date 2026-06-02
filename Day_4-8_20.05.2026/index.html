@@ -8,12 +8,13 @@
     <link rel="stylesheet" href="styles.css" />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
   </head>
   <body>
-    <div class="nav">
-      <img src="images/logo.svg" class="logo" />
+    <!-- ===================== NAV ===================== -->
+    <nav class="nav">
+      <img src="images/logo.svg" class="logo" alt="Draftr logo" />
       <div class="nav-links">
         <a href="#">About</a>
         <a href="#">Blog</a>
@@ -21,31 +22,41 @@
         <a href="#">Contact</a>
         <a href="#">Power-ups</a>
       </div>
-      <button class="login" type="submit">Login now</button>
-    </div>
+      <button class="login" type="button">Login now</button>
+    </nav>
+
+    <!-- ===================== HERO ===================== -->
     <section class="Hero">
       <div class="round_container">
         <div class="rc_button">New</div>
         <div class="rc_text">Revolutionize your design workflow</div>
       </div>
+
       <div class="hero_content">
         <div class="mc">Bring ideas to life in just a few clicks.</div>
         <div class="sc">
-          Design, prototype, and collaborate in real-time - all in one powerful
+          Design, prototype, and collaborate in real-time — all in one powerful
           platform. Elevate your <span class="scc">creative process</span> with
           <span class="scc">seamless teamwork</span> and limitless
           possibilities.
         </div>
       </div>
+
       <div class="round_container2">
         <div class="rc2_text">
           Get Started <span class="rc2d">.</span>it's free
         </div>
-        <div class="rc2_button">-></div>
+        <div class="rc2_button">→</div>
       </div>
-      <img src="images/img1.jpg" class="img1" />
-      <img src="images/img2.jpg" class="img2" />
+
+      <!-- Wrapped in a flex container so images sit side by side -->
+      <div class="hero-images">
+        <img src="images/img1.jpg" class="img1" alt="Dashboard preview" />
+        <img src="images/img2.jpg" class="img2" alt="Design canvas preview" />
+      </div>
     </section>
+
+    <!-- ===================== LOGO SCROLLER ===================== -->
     <div class="scroller">
       <div class="logo-track">
         <div style="font-family: &quot;Alex Brush&quot;, cursive">osio</div>
@@ -113,6 +124,7 @@
         >
           thea
         </div>
+        <!-- duplicate set for seamless loop -->
         <div style="font-family: &quot;Alex Brush&quot;, cursive">osio</div>
         <div
           style="
@@ -180,22 +192,24 @@
         </div>
       </div>
     </div>
+
+    <!-- ===================== BODY 1 ===================== -->
     <section class="body1">
-      <div class="b1c1">The ultimate toolkit for designers & teams</div>
+      <div class="b1c1">The ultimate toolkit for designers &amp; teams</div>
       <div class="b1c2">
-        Everything you need to create, prototype, and collaborate - all in a
+        Everything you need to create, prototype, and collaborate — all in a
         single, easy-to-use platform.
       </div>
       <div class="cards">
         <div class="card1">
-          <img src="images/img3.jpg" class="img" />
-          <div class="ca1c1">Intuitive drag & drop editor</div>
+          <img src="images/img3.jpg" class="img" alt="Drag and drop editor" />
+          <div class="ca1c1">Intuitive drag &amp; drop editor</div>
           <div class="ca1c2">
             Create stunning designs effortlessly with a user-friendly interface.
           </div>
         </div>
         <div class="card2">
-          <img src="images/img4.jpg" class="img" />
+          <img src="images/img4.jpg" class="img" alt="Prototyping" />
           <div class="ca1c1">Advanced prototyping</div>
           <div class="ca1c2">
             Turn ideas into interactive prototypes without writing a single line
@@ -203,7 +217,7 @@
           </div>
         </div>
         <div class="card3">
-          <img src="images/img5.jpg" class="img" />
+          <img src="images/img5.jpg" class="img" alt="Collaboration" />
           <div class="ca1c1">Real-time collaboration</div>
           <div class="ca1c2">
             Work seamlessly with your team, get instant feedback.
@@ -211,90 +225,91 @@
         </div>
       </div>
     </section>
+
+    <!-- ===================== BODY 2 ===================== -->
     <section class="body2">
       <div class="left">
         <h1>Simplify your workflow</h1>
 
         <div class="step">
           <div class="num">01</div>
-
           <div>
             <h3>Start your project</h3>
-            <p>Create a new design or import files with just a click.</p>
-            <p>Set up your workspace effortlessly.</p>
+            <p>
+              Create a new design or import files with just a click. Set up your
+              workspace effortlessly.
+            </p>
           </div>
         </div>
 
         <div class="step">
           <div class="num">02</div>
-
           <div>
             <h3>Design with ease</h3>
-            <p>Use our intuitive drag-and-drop editor, smart tools</p>
-            <p>stunning designs.</p>
+            <p>
+              Use our intuitive drag-and-drop editor and smart tools to build
+              stunning designs.
+            </p>
           </div>
         </div>
 
         <div class="step">
           <div class="num">03</div>
-
           <div>
-            <h3>Export & Share</h3>
-            <p>Easily integrate with your favorite tools to launch</p>
-            <p>your project effortlessly.</p>
+            <h3>Export &amp; Share</h3>
+            <p>
+              Easily integrate with your favorite tools to launch your project
+              effortlessly.
+            </p>
           </div>
         </div>
       </div>
 
       <div class="right">
-        <img class="img6" src="images/img6.jpg" />
+        <img class="img6" src="images/img6.jpg" alt="Workflow preview" />
       </div>
     </section>
+
+    <!-- ===================== BODY 3 ===================== -->
     <section class="body3">
       <div class="integration-left">
-        <img src="images/img7.png" class="integration-img" />
+        <img
+          src="images/img7.png"
+          class="integration-img"
+          alt="Integrations overview"
+        />
       </div>
 
       <div class="integration-right">
         <h1>One platform, unlimited integrations</h1>
-
         <button class="integration-btn">View all integrations</button>
-
         <p class="quote">
-          “Our platform empowers teams to collaborate, innovate, and bring ideas
-          to life—seamlessly and effortlessly.”
+          "Our platform empowers teams to collaborate, innovate, and bring ideas
+          to life — seamlessly and effortlessly."
         </p>
-
         <div class="profile">
-          <img src="images/img8.avif" />
-
-          <span> Daniel Vaughn, Founder & CEO </span>
+          <img src="images/img8.avif" alt="Daniel Vaughn" />
+          <span>Daniel Vaughn, Founder &amp; CEO</span>
         </div>
       </div>
     </section>
+
+    <!-- ===================== POWERUP ===================== -->
     <section class="powerup">
-      <h1>
-        Power up your workflow with <br />
-        next-gen features
-      </h1>
+      <h1>Power up your workflow with<br />next-gen features</h1>
 
       <div class="top-cards">
         <div class="big-card">
-          <img src="images/img9.svg" />
-
+          <img src="images/img9.svg" alt="Cloud accessibility" />
           <h3>Cloud-based accessibility</h3>
-
           <p>
-            Access your projects anytime, anywhere— no downloads or
+            Access your projects anytime, anywhere — no downloads or
             installations needed.
           </p>
         </div>
-
         <div class="big-card">
-          <img src="images/img10.png" />
-
-          <h3>Fast & secure performance</h3>
-
+          <img src="images/img10.png" alt="Secure performance" />
+          <h3>Fast &amp; secure performance</h3>
           <p>Experience lightning-fast speed with enterprise-level security.</p>
         </div>
       </div>
@@ -302,31 +317,23 @@
       <div class="bottom-cards">
         <div class="small-card">
           <div class="icon">🚀</div>
-
           <h4>Effortless design experience</h4>
-
           <p>
             Intuitive interface and smart tools to speed up your creative
             process.
           </p>
         </div>
-
         <div class="small-card">
           <div class="icon">⚙️</div>
-
           <h4>Hassle-free prototyping</h4>
-
           <p>
             Transform static designs into interactive prototypes in just a few
             clicks.
           </p>
         </div>
-
         <div class="small-card">
           <div class="icon">🎯</div>
-
-          <h4>One-click export & handoff</h4>
-
+          <h4>One-click export &amp; handoff</h4>
           <p>
             Generate code, export assets, and collaborate with developers
             effortlessly.
@@ -334,19 +341,25 @@
         </div>
       </div>
     </section>
+
+    <!-- ===================== PRICING ===================== -->
     <section class="pricing">
       <div class="pricing_header">
         <div class="price_c1">Flexible pricing plans</div>
         <div class="price_c2">
           Choose a plan that grows with you. Start for free and upgrade anytime
-          for more features and support
+          for more features and support.
         </div>
       </div>
+
       <div class="pricing_cards">
+        <!-- Starter -->
         <div class="price_card_1">
           <div class="pc_subcard">
             <div class="pricecard_subc1">Starter plan</div>
-            <div class="pricecard_subc2">For individuals & new creators</div>
+            <div class="pricecard_subc2">
+              For individuals &amp; new creators
+            </div>
             <div class="pricecard_price">
               <span class="amt">$19</span>/month
             </div>
@@ -360,7 +373,7 @@
               margin-top: 40px;
             "
           >
-            Included features :
+            Included features:
           </div>
           <div class="subcard_content_list">
             <ul>
@@ -375,11 +388,13 @@
             </ul>
           </div>
         </div>
+
+        <!-- Pro -->
         <div class="price_card_2">
           <div class="pc_subcard">
             <div class="pricecard_subc1">Pro plan</div>
             <div class="pricecard_subc2" style="max-width: 150px">
-              For freelancers & small teams
+              For freelancers &amp; small teams
             </div>
             <div class="pricecard_price">
               <span class="amt">$49</span>/month
@@ -396,23 +411,25 @@
               margin-top: 40px;
             "
           >
-            Included features :
+            Included features:
           </div>
           <div class="subcard_content_list">
             <ul>
               <li>Unlimited projects</li>
               <li>Real-time collaboration</li>
               <li>Advanced prototyping tools</li>
-              <li>Cloud storage & version history</li>
+              <li>Cloud storage &amp; version history</li>
               <li>Seamless third-party integrations</li>
-              <li style="color: gray"><del>Email & chat support</del></li>
+              <li style="color: gray"><del>Email &amp; chat support</del></li>
             </ul>
           </div>
         </div>
+
+        <!-- Business -->
         <div class="price_card_3">
           <div class="pc_subcard">
             <div class="pricecard_subc1">Business plan</div>
-            <div class="pricecard_subc2">For growing teams & agencies</div>
+            <div class="pricecard_subc2">For growing teams &amp; agencies</div>
             <div class="pricecard_price">
               <span class="amt">$79</span>/month
             </div>
@@ -426,14 +443,14 @@
               margin-top: 40px;
             "
           >
-            Included features :
+            Included features:
           </div>
           <div class="subcard_content_list">
             <ul>
               <li>Everything in Pro +</li>
-              <li>Team management & permissions</li>
+              <li>Team management &amp; permissions</li>
               <li>Enhanced security controls</li>
-              <li>Priority integrations & API access</li>
+              <li>Priority integrations &amp; API access</li>
               <li>Advanced cloud storage</li>
               <li>24/7 priority support</li>
             </ul>
@@ -441,106 +458,100 @@
         </div>
       </div>
     </section>
+
+    <!-- ===================== DESIGN SOLUTION ===================== -->
     <section class="design_solution">
       <div class="ds_img">
         <div class="ds_img_card">
-          <img src="images/ds_img.avif" alt="" />
+          <img src="images/ds_img.avif" alt="Design solution showcase" />
         </div>
       </div>
 
       <div class="ds_cont">
         <h2>The perfect design solution for every workflow</h2>
-
         <p>
           Discover how our design platform fits your needs, whether you're a
           freelancer, startup, or enterprise.
         </p>
-
         <div class="feature-grid">
           <div class="feature">
-            <span class="arrow">→</span>
-            UI/UX designers
+            <span class="arrow">→</span> UI/UX designers
           </div>
-
           <div class="feature">
-            <span class="arrow">→</span>
-            App & Web developers
+            <span class="arrow">→</span> App &amp; Web developers
           </div>
-
+          <div class="feature"><span class="arrow">→</span> Product teams</div>
           <div class="feature">
-            <span class="arrow">→</span>
-            Product teams
+            <span class="arrow">→</span> Marketing teams
           </div>
-
           <div class="feature">
-            <span class="arrow">→</span>
-            Marketing teams
+            <span class="arrow">→</span> Enterprise Organizations
           </div>
-
           <div class="feature">
-            <span class="arrow">→</span>
-            Enterprise Organizations
-          </div>
-
-          <div class="feature">
-            <span class="arrow">→</span>
-            Agencies & Enterprises
+            <span class="arrow">→</span> Agencies &amp; Enterprises
           </div>
         </div>
       </div>
     </section>
+
+    <!-- ===================== NEXT LEVEL ===================== -->
     <section class="nextlevel">
       <div class="content">
-        <h2>Take your creative workflow to the next level</h2>
+        <h2>Take your creative workflow<br />to the next level</h2>
         <p>
           Supercharge your workflow with powerful design tools and effortless
-          collaboration—perfect for freelancers and teams.
+          collaboration — perfect for freelancers and teams.
         </p>
       </div>
       <div class="nl_buttons">
         <button class="nl_button">Get Started</button>
-        <button class="ms_button"></button>
-        <button class="apple_button"></button>
+        <button class="cmp_button"><i class="fa-brands fa-windows"></i></button>
+        <button class="cmp_button"><i class="fa-brands fa-apple"></i></button>
       </div>
       <div class="nl_img">
-        <img src="images/nl_imag.avif" />
+        <img src="images/nl_imag.avif" alt="Next level preview" />
       </div>
     </section>
+
+    <!-- ===================== FOOTER ===================== -->
     <footer class="footer">
       <div class="footer-top">
-        <!-- Left Side -->
         <div class="footer-left">
           <div class="footer-logo">
             <img src="images/footerlogo.svg" alt="Draftr Logo" />
           </div>
-
           <div class="social-section">
             <p>Follow us on:</p>
-
             <div class="social-icons">
-              <a href="#"><i class="fab fa-facebook-f"></i></a>
-              <a href="#"><i class="fab fa-x-twitter"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-              <a href="#"><i class="fab fa-linkedin-in"></i></a>
-              <a href="#"><i class="fab fa-youtube"></i></a>
+              <a href="#" aria-label="Facebook"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" aria-label="X / Twitter"
+                ><i class="fab fa-x-twitter"></i
+              ></a>
+              <a href="#" aria-label="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" aria-label="LinkedIn"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a href="#" aria-label="YouTube"
+                ><i class="fab fa-youtube"></i
+              ></a>
             </div>
           </div>
         </div>
 
-        <!-- Right Side -->
         <div class="footer-right">
           <div class="footer-column">
             <h3>Quick Links</h3>
-
             <a href="#">Home</a>
             <a href="#">Features</a>
             <a href="#">Pricing</a>
             <a href="#">Download</a>
           </div>
-
           <div class="footer-column">
             <h3>All Pages</h3>
-
             <a href="#">Power-Ups <span class="new-tag">New</span></a>
             <a href="#">About us</a>
             <a href="#">Contact us</a>
