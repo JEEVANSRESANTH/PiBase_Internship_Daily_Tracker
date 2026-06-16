@@ -1,0 +1,9 @@
+@import "tailwindcss";
+@theme {
+  --font-arial: Arial, Helvetica, sans-serif;
+  --font-intertight: "Inter Tight", Inter, Roboto, sans-serif;
+  --font-inter: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --breakpoint-sm: 481px;
+  --breakpoint-md: 769px;
+  --breakpoint-lg: 1025px;
+}

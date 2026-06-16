@@ -19,7 +19,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 20px;
-  background: #f0ecff;
+  background: #f9f8fd;
 }
 
 .logo {
@@ -64,8 +64,14 @@ button.login {
 
 /* ======================== HERO ======================== */
 .Hero {
-  background: #f0ecff;
-  padding-top: 70px;
+  background: linear-gradient(
+    180deg,
+    var(--token-4a707b9d-a31e-4c43-92fb-0b65962a4be7, #f0f2f6) 0.45045%,
+    #8771ff4d 24.3243%,
+    #8771ff4d 78.8288%,
+    var(--token-4a707b9d-a31e-4c43-92fb-0b65962a4be7, #f0f2f6) 100%
+  );
+  padding-top: 20px;
   min-height: 100vh;
 }
 
@@ -140,9 +146,9 @@ button.login {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 280px;
+  width: 250px;
   padding: 10px 15px;
-  margin: 70px auto;
+  margin: 40px auto;
   background: linear-gradient(to right, #7b61ff, #5a3fff);
   border-radius: 999px;
   cursor: pointer;
@@ -153,8 +159,8 @@ button.login {
 
 .rc2_text {
   color: white;
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 17px;
+  font-weight: 700;
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
   align-items: center;
@@ -168,8 +174,8 @@ button.login {
 }
 
 .rc2_button {
-  width: 45px;
-  height: 45px;
+  width: 30px;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -208,7 +214,7 @@ button.login {
 .scroller {
   overflow: hidden;
   width: 100%;
-  padding: 30px 0;
+  padding: 40px 0;
 }
 
 .logo-track {
@@ -217,6 +223,10 @@ button.login {
   width: max-content;
   font-size: 30px;
   animation: scrollLeft 30s linear infinite;
+}
+.scroller img {
+  width: 100px;
+  height: 40px;
 }
 
 @keyframes scrollLeft {
@@ -537,9 +547,9 @@ button.login {
 .price_card_1,
 .price_card_2,
 .price_card_3 {
-  width: 330px;
+  width: 370px;
   padding: 20px;
-  padding-bottom: 65px;
+  padding-bottom: 15px;
   border-radius: 30px;
   background-color: rgb(233, 237, 242);
 }
@@ -547,7 +557,10 @@ button.login {
 .pc_subcard {
   position: relative;
   background-color: white;
-  padding: 30px 20px 30px;
+  padding: 40px 30px 10px;
+  margin-top: -15px;
+  margin-left: -15px;
+  margin-right: -15px;
   border-radius: 25px;
 }
 
@@ -564,9 +577,15 @@ button.login {
   color: gray;
   margin-top: 8px;
 }
-
+.pc_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
 .pricecard_price {
-  margin-top: 16px;
+  white-space: nowrap;
+  margin: -50px 10px 100px 180px;
   font-family: Arial, Helvetica, sans-serif;
   color: gray;
   font-weight: bold;
@@ -581,7 +600,7 @@ button.login {
 button.price_button {
   display: block;
   width: 100%;
-  margin-top: 20px;
+  margin-top: -60px;
   background-color: black;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
@@ -1265,5 +1284,9 @@ button.price_button {
 
   .nextlevel h2 {
     font-size: 26px;
+  }
+  .pc_header {
+    flex-direction: column;
+    gap: 10px;
   }
 }

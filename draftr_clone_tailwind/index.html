@@ -1,0 +1,832 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Draftr clone</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <!-- Keyframes for the logo scroller (no Tailwind utility for custom keyframes) -->
+    <style>
+      @keyframes scrollLeft {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+    </style>
+
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body class="overflow-x-hidden">
+    <!-- ===================== NAV ===================== -->
+    <nav
+      class="relative font-arial flex flex-wrap justify-between items-center gap-[10px] px-5 py-[15px] bg-[#f9f8fd] md:flex-nowrap md:justify-center md:gap-0 md:p-5"
+    >
+      <img
+        src="images/logo.svg"
+        class="static w-[90px] h-10 md:absolute md:left-10 md:w-[120px]"
+        alt="Draftr logo"
+      />
+      <div
+        class="hidden md:flex md:mt-[15px] md:gap-[25px] md:text-base lg:gap-10 lg:text-lg"
+      >
+        <a href="#" class="no-underline text-[gray] hover:text-black">About</a>
+        <a href="#" class="no-underline text-[gray] hover:text-black">Blog</a>
+        <a href="#" class="no-underline text-[gray] hover:text-black"
+          >Changelog</a
+        >
+        <a href="#" class="no-underline text-[gray] hover:text-black"
+          >Contact</a
+        >
+        <a href="#" class="no-underline text-[gray] hover:text-black"
+          >Power-ups</a
+        >
+      </div>
+      <button
+        type="button"
+        class="static md:absolute md:right-10 md:top-1/2 md:-translate-y-1/2 w-[100px] md:w-[110px] h-[38px] md:h-10 bg-black text-white font-arial font-bold border-none rounded-[50px] text-sm md:text-base cursor-pointer shadow-[0_0_40px_grey]"
+      >
+        Login now
+      </button>
+    </nav>
+
+    <!-- ===================== HERO ===================== -->
+    <section
+      class="bg-[linear-gradient(180deg,#f0f2f6_0.45%,#8771ff4d_24.32%,#8771ff4d_78.83%,#f0f2f6_100%)] pt-10 md:pt-5 min-h-screen"
+    >
+      <div
+        class="flex items-center w-fit px-[25px] py-2 rounded-full mx-auto my-[30px] md:my-[50px] font-arial bg-white shadow-[0_10px_30px_rgba(0,0,0,0.1)] gap-[10px]"
+      >
+        <div
+          class="bg-black text-white px-[10px] py-1 rounded-[20px] text-[15px] font-arial font-bold whitespace-nowrap"
+        >
+          New
+        </div>
+        <div class="text-[13px] font-arial text-[#333] whitespace-nowrap">
+          Revolutionize your design workflow
+        </div>
+      </div>
+
+      <div class="max-w-[900px] mx-auto text-center px-5">
+        <div
+          class="font-intertight text-[1.9rem] sm:text-[2.4rem] md:text-[3.5rem] lg:text-[5rem] font-semibold leading-[1.1] max-w-[700px] mx-auto mb-[25px] tracking-[-0.02em] md:tracking-[-0.04em]"
+        >
+          Bring ideas to life in just a few clicks.
+        </div>
+        <div
+          class="max-w-[850px] font-inter mx-auto text-base md:text-[1.25rem] leading-[1.6] text-[#6b6687]"
+        >
+          Design, prototype, and collaborate in real-time — all in one powerful
+          platform. Elevate your
+          <span class="text-black">creative process</span> with
+          <span class="text-black">seamless teamwork</span> and limitless
+          possibilities.
+        </div>
+      </div>
+
+      <div
+        class="flex items-center justify-between w-[210px] sm:w-[240px] md:w-[250px] px-3 py-2 sm:px-[15px] sm:py-[10px] mx-auto my-10 bg-gradient-to-r from-[#7b61ff] to-[#5a3fff] rounded-full cursor-pointer shadow-[0_10px_25px_rgba(123,97,255,0.4),0_0_40px_rgba(123,97,255,0.25)]"
+      >
+        <div
+          class="text-white text-[16px] sm:text-[17px] font-bold font-arial flex items-center gap-[5px]"
+        >
+          Get Started <span class="text-[30px] relative top-[-8px]">.</span>it's
+          free
+        </div>
+        <div
+          class="w-[38px] h-[38px] sm:w-[30px] sm:h-[30px] flex items-center justify-center rounded-full bg-white shrink-0"
+        >
+          →
+        </div>
+      </div>
+
+      <!-- Wrapped so img1 / img2 sit side by side -->
+      <div
+        class="flex flex-col md:flex-row items-center md:items-start justify-center gap-4 md:gap-3 lg:gap-5 px-5 pb-10 md:pb-[60px]"
+      >
+        <img
+          src="images/img1.jpg"
+          alt="Dashboard preview"
+          class="w-full md:w-[55%] max-w-full md:max-w-[700px] h-auto aspect-[16/9] md:aspect-[7/5] object-cover rounded-[20px]"
+        />
+        <img
+          src="images/img2.jpg"
+          alt="Design canvas preview"
+          class="w-full md:w-[35%] max-w-full md:max-w-[450px] h-auto aspect-[16/9] md:aspect-[9/11] object-cover rounded-[20px]"
+        />
+      </div>
+    </section>
+
+    <!-- ===================== LOGO SCROLLER ===================== -->
+    <div class="overflow-hidden w-full py-10">
+      <div
+        class="flex gap-[35px] md:gap-[50px] w-max text-[22px] md:text-[30px] animate-[scrollLeft_30s_linear_infinite]"
+      >
+        <img class="w-[100px] h-10" src="images/scrollerlogo1.svg" alt="" />
+        <img class="w-[100px] h-10" src="images/scrollerlogo2.svg" alt="" />
+        <img class="w-[100px] h-10" src="images/scrollerlogo3.svg" alt="" />
+        <img class="w-[100px] h-10" src="images/scrollerlogo4.svg" alt="" />
+        <img class="w-[100px] h-10" src="images/scrollerlogo5.svg" alt="" />
+        <img class="w-[100px] h-10" src="images/scrollerlogo6.svg" alt="" />
+        <img class="w-[100px] h-10" src="images/scrollerlogo7.svg" alt="" />
+        <img class="w-[100px] h-10" src="images/scrollerlogo8.svg" alt="" />
+        <img class="w-[100px] h-10" src="images/scrollerlogo1.svg" alt="" />
+        <img class="w-[100px] h-10" src="images/scrollerlogo2.svg" alt="" />
+        <img class="w-[100px] h-10" src="images/scrollerlogo3.svg" alt="" />
+        <img class="w-[100px] h-10" src="images/scrollerlogo4.svg" alt="" />
+        <img class="w-[100px] h-10" src="images/scrollerlogo5.svg" alt="" />
+        <img class="w-[100px] h-10" src="images/scrollerlogo6.svg" alt="" />
+        <img class="w-[100px] h-10" src="images/scrollerlogo7.svg" alt="" />
+        <img class="w-[100px] h-10" src="images/scrollerlogo8.svg" alt="" />
+      </div>
+    </div>
+
+    <!-- ===================== BODY 1 ===================== -->
+    <section>
+      <div
+        class="text-[1.7rem] sm:text-[2rem] md:text-[3rem] font-semibold font-intertight text-center max-w-[600px] mx-5 md:mx-auto mt-[60px] md:mt-[100px] mb-5 md:mb-[25px]"
+      >
+        The ultimate toolkit for designers & teams
+      </div>
+      <div
+        class="text-[gray] font-intertight text-[18px] md:text-[23px] text-center max-w-[700px] mx-auto px-5 md:px-0"
+      >
+        Everything you need to create, prototype, and collaborate — all in a
+        single, easy-to-use platform.
+      </div>
+
+      <div
+        class="flex justify-center flex-wrap gap-5 md:gap-[30px] mt-10 md:mt-[70px] px-5 pb-10 md:pb-[60px]"
+      >
+        <div
+          class="w-full md:w-[350px] max-w-[400px] md:max-w-none p-5 pb-10 rounded-[20px] shadow-[0_10px_30px_rgba(0,0,0,0.15)]"
+        >
+          <img
+            src="images/img3.jpg"
+            class="w-full h-[250px] object-cover rounded-[20px]"
+            alt="Drag and drop editor"
+          />
+          <div class="text-[22px] font-semibold font-arial mt-[15px]">
+            Intuitive drag & drop editor
+          </div>
+          <div class="text-[gray] leading-[1.5] font-arial">
+            Create stunning designs effortlessly with a user-friendly interface.
+          </div>
+        </div>
+        <div
+          class="w-full md:w-[350px] max-w-[400px] md:max-w-none p-5 pb-10 rounded-[20px] shadow-[0_10px_30px_rgba(0,0,0,0.15)]"
+        >
+          <img
+            src="images/img4.jpg"
+            class="w-full h-[250px] object-cover rounded-[20px]"
+            alt="Prototyping"
+          />
+          <div class="text-[22px] font-semibold font-arial mt-[15px]">
+            Advanced prototyping
+          </div>
+          <div class="text-[gray] leading-[1.5] font-arial">
+            Turn ideas into interactive prototypes without writing a single line
+            of code.
+          </div>
+        </div>
+        <div
+          class="w-full md:w-[350px] max-w-[400px] md:max-w-none p-5 pb-10 rounded-[20px] shadow-[0_10px_30px_rgba(0,0,0,0.15)]"
+        >
+          <img
+            src="images/img5.jpg"
+            class="w-full h-[250px] object-cover rounded-[20px]"
+            alt="Collaboration"
+          />
+          <div class="text-[22px] font-semibold font-arial mt-[15px]">
+            Real-time collaboration
+          </div>
+          <div class="text-[gray] leading-[1.5] font-arial">
+            Work seamlessly with your team, get instant feedback.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== BODY 2 ===================== -->
+    <section
+      class="flex flex-col md:flex-row justify-between items-center px-[25px] md:px-10 lg:px-20 py-[60px] md:py-20 lg:py-[100px] gap-10 md:gap-[50px] lg:gap-20 bg-[#f8f8f8]"
+    >
+      <div
+        class="font-arial flex-1 w-full md:w-auto max-w-full md:max-w-[500px]"
+      >
+        <h1
+          class="text-[28px] sm:text-[32px] md:text-[38px] lg:text-[48px] font-bold leading-[1.05] mb-[30px] md:mb-[50px]"
+        >
+          Simplify your workflow
+        </h1>
+
+        <div
+          class="flex gap-5 text-[17px] max-w-full md:max-w-[400px] mb-[30px] md:mb-[50px]"
+        >
+          <div
+            class="w-10 h-10 bg-[#e9e9e9] rounded-[10px] flex justify-center items-center font-bold shrink-0"
+          >
+            01
+          </div>
+          <div>
+            <h3 class="mb-2 mt-0">Start your project</h3>
+            <p class="text-[gray] m-0">
+              Create a new design or import files with just a click. Set up your
+              workspace effortlessly.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="flex gap-5 text-[17px] max-w-full md:max-w-[400px] mb-[30px] md:mb-[50px]"
+        >
+          <div
+            class="w-10 h-10 bg-[#e9e9e9] rounded-[10px] flex justify-center items-center font-bold shrink-0"
+          >
+            02
+          </div>
+          <div>
+            <h3 class="mb-2 mt-0">Design with ease</h3>
+            <p class="text-[gray] m-0">
+              Use our intuitive drag-and-drop editor and smart tools to build
+              stunning designs.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="flex gap-5 text-[17px] max-w-full md:max-w-[400px] mb-[30px] md:mb-[50px]"
+        >
+          <div
+            class="w-10 h-10 bg-[#e9e9e9] rounded-[10px] flex justify-center items-center font-bold shrink-0"
+          >
+            03
+          </div>
+          <div>
+            <h3 class="mb-2 mt-0">Export &amp; Share</h3>
+            <p class="text-[gray] m-0">
+              Easily integrate with your favorite tools to launch your project
+              effortlessly.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="flex-1 w-full md:w-auto bg-[#e9eaee] rounded-[25px] md:rounded-[40px] p-[30px] md:p-[60px] flex justify-center items-center"
+      >
+        <img
+          class="w-full max-w-[600px] h-auto rounded-[20px]"
+          src="images/img6.jpg"
+          alt="Workflow preview"
+        />
+      </div>
+    </section>
+
+    <!-- ===================== BODY 3 ===================== -->
+    <section
+      class="flex flex-col md:flex-row items-center justify-between px-[25px] md:px-10 lg:px-20 py-[60px] md:py-20 lg:py-[100px] gap-10 md:gap-[50px] lg:gap-20 bg-[#f8f8f8]"
+    >
+      <div
+        class="flex-1 w-full md:w-auto bg-[#f1f2f5] rounded-[25px] md:rounded-[40px] p-[30px] md:p-[60px] flex justify-center"
+      >
+        <img
+          src="images/img7.png"
+          class="w-full max-w-[700px] rounded-[20px]"
+          alt="Integrations overview"
+        />
+      </div>
+
+      <div class="flex-1 w-full md:w-auto font-arial">
+        <h1
+          class="text-[26px] sm:text-[32px] md:text-[clamp(36px,5vw,65px)] max-w-full md:max-w-[550px] leading-[1.05] mb-[35px]"
+        >
+          One platform, unlimited integrations
+        </h1>
+        <button
+          class="border-none bg-black text-white px-[35px] py-[18px] rounded-full text-[20px] font-semibold mb-[60px] cursor-pointer shadow-[0_10px_30px_rgba(0,0,0,0.25)]"
+        >
+          View all integrations
+        </button>
+        <p
+          class="max-w-full md:max-w-[500px] text-[16px] md:text-[18px] leading-[1.7]"
+        >
+          "Our platform empowers teams to collaborate, innovate, and bring ideas
+          to life — seamlessly and effortlessly."
+        </p>
+        <div class="flex items-center gap-[15px] mt-[30px]">
+          <img
+            src="images/img8.avif"
+            class="w-10 h-10 rounded-full object-cover"
+            alt="Daniel Vaughn"
+          />
+          <span>Daniel Vaughn, Founder & CEO</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== POWERUP ===================== -->
+    <section
+      class="bg-[#050505] font-arial text-white rounded-[25px] md:rounded-[35px] m-5 md:m-[30px] lg:m-10 px-[25px] md:px-[50px] lg:px-20 py-[60px] md:py-20 lg:py-[100px]"
+    >
+      <h1
+        class="text-center text-[24px] sm:text-[28px] md:text-[clamp(36px,5vw,60px)] leading-[1.1] mb-10 md:mb-[70px]"
+      >
+        Power up your workflow with <br />
+        next-gen features
+      </h1>
+
+      <div class="flex justify-center flex-wrap gap-[30px] mb-[60px]">
+        <div
+          class="w-full md:w-[420px] max-w-[400px] md:max-w-none bg-[#202020] border border-[#2d2d2d] rounded-[30px] overflow-hidden"
+        >
+          <img
+            src="images/img9.svg"
+            class="w-full h-[250px] object-cover"
+            alt="Cloud accessibility"
+          />
+          <h3 class="px-5 pt-5 pb-0">Cloud-based accessibility</h3>
+          <p class="text-[#bbb] px-5 pb-[30px]">
+            Access your projects anytime, anywhere — no downloads or
+            installations needed.
+          </p>
+        </div>
+        <div
+          class="w-full md:w-[420px] max-w-[400px] md:max-w-none bg-[#202020] border border-[#2d2d2d] rounded-[30px] overflow-hidden"
+        >
+          <img
+            src="images/img10.png"
+            class="w-full h-[250px] object-cover"
+            alt="Secure performance"
+          />
+          <h3 class="px-5 pt-5 pb-0">Fast & secure performance</h3>
+          <p class="text-[#bbb] px-5 pb-[30px]">
+            Experience lightning-fast speed with enterprise-level security.
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="grid grid-cols-1 md:grid-cols-3 gap-[30px] md:gap-[25px] lg:gap-10"
+      >
+        <div class="p-[10px] text-[18px]">
+          <div
+            class="w-[45px] h-[45px] bg-[#222] rounded-[12px] flex items-center justify-center mb-5 text-[22px]"
+          >
+            🚀
+          </div>
+          <h4>Effortless design experience</h4>
+          <p class="text-[#a7a7a7] text-[16px]">
+            Intuitive interface and smart tools to speed up your creative
+            process.
+          </p>
+        </div>
+        <div class="p-[10px] text-[18px]">
+          <div
+            class="w-[45px] h-[45px] bg-[#222] rounded-[12px] flex items-center justify-center mb-5 text-[22px]"
+          >
+            ⚙️
+          </div>
+          <h4>Hassle-free prototyping</h4>
+          <p class="text-[#a7a7a7] text-[16px]">
+            Transform static designs into interactive prototypes in just a few
+            clicks.
+          </p>
+        </div>
+        <div class="p-[10px] text-[18px]">
+          <div
+            class="w-[45px] h-[45px] bg-[#222] rounded-[12px] flex items-center justify-center mb-5 text-[22px]"
+          >
+            🎯
+          </div>
+          <h4>One-click export & handoff</h4>
+          <p class="text-[#a7a7a7] text-[16px]">
+            Generate code, export assets, and collaborate with developers
+            effortlessly.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PRICING ===================== -->
+    <section class="mt-[50px] px-5 pb-[60px] md:pb-20">
+      <div class="pricing_header">
+        <div
+          class="text-[28px] sm:text-[32px] md:text-[45px] font-arial text-center font-semibold tracking-[-1px] md:tracking-[-2.5px]"
+        >
+          Flexible pricing plans
+        </div>
+        <div
+          class="text-[16px] md:text-[18px] font-arial text-center max-w-[500px] mt-5 mx-auto px-[10px] md:px-0 text-[gray] font-medium"
+        >
+          Choose a plan that grows with you. Start for free and upgrade anytime
+          for more features and support.
+        </div>
+      </div>
+
+      <div
+        class="flex justify-center flex-wrap gap-5 md:gap-[25px] lg:gap-10 mt-10 md:mt-[70px]"
+      >
+        <!-- Starter -->
+        <div
+          class="flex flex-col sm:flex-row justify-between items-start gap-[10px] sm:gap-5"
+        >
+          <div
+            class="w-full md:w-[370px] max-w-[400px] md:max-w-none p-5 pb-[15px] rounded-[30px] bg-[rgb(233,237,242)]"
+          >
+            <div
+              class="relative bg-white pt-10 px-[30px] pb-[10px] -mt-[15px] -mx-[15px] rounded-[25px]"
+            >
+              <div class="text-[20px] font-arial font-semibold">
+                Starter plan
+              </div>
+              <div class="font-arial font-[550] max-w-[200px] text-[gray] mt-2">
+                For individuals & new creators
+              </div>
+              <div
+                class="whitespace-nowrap -mt-[50px] mr-[10px] mb-[100px] ml-[180px] font-arial text-[gray] font-bold"
+              >
+                <span class="text-[45px] text-black font-sans">$19</span>/month
+              </div>
+
+              <button
+                class="block w-full -mt-[60px] bg-black text-white font-arial font-semibold text-[18px] border-none rounded-[50px] h-[50px] cursor-pointer shadow-[0_0_40px_grey]"
+              >
+                Get Started
+              </button>
+            </div>
+            <div class="font-arial text-[15px] text-[gray] mt-10">
+              Included features:
+            </div>
+            <div
+              class="font-arial text-[16px] font-normal leading-[25px] px-[5px]"
+            >
+              <ul class="pl-5 mt-5">
+                <li>1 active project</li>
+                <li>Basic collaboration tools</li>
+                <li>Limited prototyping options</li>
+                <li>500MB cloud storage</li>
+                <li class="text-[gray]">
+                  <del>Seamless third-party integrations</del>
+                </li>
+                <li class="text-[gray]"><del>Community support</del></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pro -->
+        <div
+          class="flex flex-col sm:flex-row justify-between items-start gap-[10px] sm:gap-5"
+        >
+          <div
+            class="w-full md:w-[370px] max-w-[400px] md:max-w-none p-5 pb-[15px] rounded-[30px] bg-[rgb(233,237,242)]"
+          >
+            <div
+              class="relative bg-white pt-10 px-[30px] pb-[10px] -mt-[15px] -mx-[15px] rounded-[25px]"
+            >
+              <div class="text-[20px] font-arial font-semibold">Pro plan</div>
+              <div class="font-arial font-[550] max-w-[150px] text-[gray] mt-2">
+                For freelancers & small teams
+              </div>
+              <div
+                class="whitespace-nowrap -mt-[50px] mr-[10px] mb-[100px] ml-[180px] font-arial text-[gray] font-bold"
+              >
+                <span class="text-[45px] text-black font-sans">$49</span>/month
+              </div>
+
+              <button
+                class="block w-full -mt-[60px] bg-[blueviolet] text-white font-arial font-semibold text-[18px] border-none rounded-[50px] h-[50px] cursor-pointer shadow-[0_0_40px_grey]"
+              >
+                Get Started
+              </button>
+            </div>
+            <div class="font-arial text-[15px] text-[gray] mt-10">
+              Included features:
+            </div>
+            <div
+              class="font-arial text-[16px] font-normal leading-[25px] px-[5px]"
+            >
+              <ul class="pl-5 mt-5">
+                <li>Unlimited projects</li>
+                <li>Real-time collaboration</li>
+                <li>Advanced prototyping tools</li>
+                <li>Cloud storage & version history</li>
+                <li>Seamless third-party integrations</li>
+                <li class="text-[gray]"><del>Email & chat support</del></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Business -->
+        <div
+          class="flex flex-col sm:flex-row justify-between items-start gap-[10px] sm:gap-5"
+        >
+          <div
+            class="w-full md:w-[370px] max-w-[400px] md:max-w-none p-5 pb-[15px] rounded-[30px] bg-[rgb(233,237,242)]"
+          >
+            <div
+              class="relative bg-white pt-10 px-[30px] pb-[10px] -mt-[15px] -mx-[15px] rounded-[25px]"
+            >
+              <div class="text-[20px] font-arial font-semibold">
+                Business plan
+              </div>
+              <div class="font-arial font-[550] max-w-[200px] text-[gray] mt-2">
+                For growing teams & agencies
+              </div>
+              <div
+                class="whitespace-nowrap -mt-[50px] mr-[10px] mb-[100px] ml-[180px] font-arial text-[gray] font-bold"
+              >
+                <span class="text-[45px] text-black font-sans">$79</span>/month
+              </div>
+
+              <button
+                class="block w-full -mt-[60px] bg-black text-white font-arial font-semibold text-[18px] border-none rounded-[50px] h-[50px] cursor-pointer shadow-[0_0_40px_grey]"
+              >
+                Get Started
+              </button>
+            </div>
+            <div class="font-arial text-[15px] text-[gray] mt-10">
+              Included features:
+            </div>
+            <div
+              class="font-arial text-[16px] font-normal leading-[25px] px-[5px]"
+            >
+              <ul class="pl-5 mt-5">
+                <li>Everything in Pro +</li>
+                <li>Team management & permissions</li>
+                <li>Enhanced security controls</li>
+                <li>Priority integrations & API access</li>
+                <li>Advanced cloud storage</li>
+                <li>24/7 priority support</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== DESIGN SOLUTION ===================== -->
+    <section
+      class="flex flex-col md:flex-row items-center justify-between gap-10 md:gap-[50px] lg:gap-20 max-w-[1400px] mx-auto my-[60px] md:my-[100px] px-[25px] md:px-10 lg:px-20 text-center md:text-left"
+    >
+      <div class="flex-[1.2]">
+        <div
+          class="bg-[#f1f2f6] rounded-[40px] p-10 flex justify-center items-center"
+        >
+          <img
+            src="images/ds_img.avif"
+            alt="Design solution showcase"
+            class="w-[70%] md:w-[60%] h-auto block rounded-[20px]"
+          />
+        </div>
+      </div>
+
+      <div class="flex-1">
+        <h2
+          class="text-[32px] md:text-[clamp(36px,4vw,52px)] leading-none font-arial font-bold tracking-[-1px] md:tracking-[-2px] max-w-full md:max-w-[650px] mb-[30px]"
+        >
+          The perfect design solution for every workflow
+        </h2>
+
+        <p
+          class="text-[17px] leading-[1.6] text-[#444] font-arial max-w-full md:max-w-[650px] mb-[50px]"
+        >
+          Discover how our design platform fits your needs, whether you're a
+          freelancer, startup, or enterprise.
+        </p>
+
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 gap-[10px] md:gap-x-[60px] md:gap-y-[12px]"
+        >
+          <div
+            class="flex items-center justify-center md:justify-start gap-[15px] text-[15px] font-arial font-medium"
+          >
+            <span class="text-[#6f4dff] text-[24px] font-bold shrink-0">→</span>
+            UI/UX designers
+          </div>
+          <div
+            class="flex items-center justify-center md:justify-start gap-[15px] text-[15px] font-arial font-medium"
+          >
+            <span class="text-[#6f4dff] text-[24px] font-bold shrink-0">→</span>
+            App & Web developers
+          </div>
+          <div
+            class="flex items-center justify-center md:justify-start gap-[15px] text-[15px] font-arial font-medium"
+          >
+            <span class="text-[#6f4dff] text-[24px] font-bold shrink-0">→</span>
+            Product teams
+          </div>
+          <div
+            class="flex items-center justify-center md:justify-start gap-[15px] text-[15px] font-arial font-medium"
+          >
+            <span class="text-[#6f4dff] text-[24px] font-bold shrink-0">→</span>
+            Marketing teams
+          </div>
+          <div
+            class="flex items-center justify-center md:justify-start gap-[15px] text-[15px] font-arial font-medium"
+          >
+            <span class="text-[#6f4dff] text-[24px] font-bold shrink-0">→</span>
+            Enterprise Organizations
+          </div>
+          <div
+            class="flex items-center justify-center md:justify-start gap-[15px] text-[15px] font-arial font-medium"
+          >
+            <span class="text-[#6f4dff] text-[24px] font-bold shrink-0">→</span>
+            Agencies & Enterprises
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== NEXT LEVEL ===================== -->
+    <section
+      class="bg-[linear-gradient(to_bottom,#f5f5f5_0%,#ece7ff_20%,#ddd3ff_100%)] pt-[70px] md:pt-[100px] text-center overflow-hidden"
+    >
+      <div class="content">
+        <h2
+          class="text-[26px] sm:text-[30px] md:text-[clamp(32px,5vw,54px)] leading-[1.1] font-bold tracking-[-1px] md:tracking-[-2px] mx-auto mb-5 max-w-[650px] text-center font-arial px-5 md:px-0"
+        >
+          Take your creative workflow<br />
+          to the next level
+        </h2>
+        <p
+          class="text-[#666] text-[18px] font-arial leading-[1.6] max-w-[700px] mx-auto mb-[30px] px-5"
+        >
+          Supercharge your workflow with powerful design tools and effortless
+          collaboration — perfect for freelancers and teams.
+        </p>
+      </div>
+      <div
+        class="flex flex-wrap md:flex-nowrap justify-center items-center gap-3 md:gap-[15px] mb-[60px] px-5 md:px-0"
+      >
+        <button
+          class="bg-gradient-to-r from-[#7b61ff] to-[#5a3fff] text-white border-none rounded-full px-[28px] md:px-[35px] py-3 md:py-[15px] text-[16px] md:text-[18px] cursor-pointer shadow-[0_10px_25px_rgba(123,97,255,0.4)]"
+        >
+          Get Start
+        </button>
+        <button
+          class="w-[50px] h-[50px] border-none rounded-full bg-white cursor-pointer text-[20px]"
+        >
+          <i class="fa-brands fa-windows text-[22px] text-black"></i>
+        </button>
+        <button
+          class="w-[50px] h-[50px] border-none rounded-full bg-white cursor-pointer text-[20px]"
+        >
+          <i class="fa-brands fa-apple text-[22px] text-black"></i>
+        </button>
+      </div>
+      <div class="max-w-[1100px] mx-auto px-5">
+        <img
+          class="w-full block"
+          src="images/nl_imag.avif"
+          alt="Next level preview"
+        />
+      </div>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer
+      class="bg-[#050505] text-white font-arial px-[25px] md:px-10 lg:px-[60px] pt-[60px] lg:pt-20 pb-[30px]"
+    >
+      <div class="flex flex-col md:flex-row justify-between items-start gap-10">
+        <div class="flex flex-col justify-between min-h-0 md:min-h-[300px]">
+          <div class="flex items-center gap-[15px]">
+            <img
+              src="images/footerlogo.svg"
+              alt="Draftr Logo"
+              class="w-[120px] md:w-[150px] h-[60px] md:h-20 object-contain"
+            />
+          </div>
+          <div class="mt-[30px] md:mt-[60px]">
+            <p class="text-[#8a8a8a] text-[16px] mb-5">Follow us on:</p>
+            <div class="flex gap-[25px]">
+              <a
+                href="#"
+                aria-label="Facebook"
+                class="text-white no-underline text-[28px] hover:text-[#7b61ff]"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a
+                href="#"
+                aria-label="X / Twitter"
+                class="text-white no-underline text-[28px] hover:text-[#7b61ff]"
+                ><i class="fab fa-x-twitter"></i
+              ></a>
+              <a
+                href="#"
+                aria-label="Instagram"
+                class="text-white no-underline text-[28px] hover:text-[#7b61ff]"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="#"
+                aria-label="LinkedIn"
+                class="text-white no-underline text-[28px] hover:text-[#7b61ff]"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a
+                href="#"
+                aria-label="YouTube"
+                class="text-white no-underline text-[28px] hover:text-[#7b61ff]"
+                ><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="flex flex-col md:flex-row flex-wrap gap-10 md:gap-[50px] lg:gap-20"
+        >
+          <div class="flex flex-col gap-[18px]">
+            <h3 class="text-[20px] font-semibold mb-[10px]">Quick Links</h3>
+            <a
+              href="#"
+              class="text-[#9a9a9a] no-underline text-[14px] font-semibold hover:text-white"
+              >Home</a
+            >
+            <a
+              href="#"
+              class="text-[#9a9a9a] no-underline text-[14px] font-semibold hover:text-white"
+              >Features</a
+            >
+            <a
+              href="#"
+              class="text-[#9a9a9a] no-underline text-[14px] font-semibold hover:text-white"
+              >Pricing</a
+            >
+            <a
+              href="#"
+              class="text-[#9a9a9a] no-underline text-[14px] font-semibold hover:text-white"
+              >Download</a
+            >
+          </div>
+          <div class="flex flex-col gap-[18px]">
+            <h3 class="text-[20px] font-semibold mb-[10px]">All Pages</h3>
+            <a
+              href="#"
+              class="text-[#9a9a9a] no-underline text-[14px] font-semibold hover:text-white"
+            >
+              Power-Ups
+              <span
+                class="bg-[#7b61ff] text-white px-[10px] py-1 rounded-[20px] text-[12px] ml-2"
+                >New</span
+              >
+            </a>
+            <a
+              href="#"
+              class="text-[#9a9a9a] no-underline text-[14px] font-semibold hover:text-white"
+              >About us</a
+            >
+            <a
+              href="#"
+              class="text-[#9a9a9a] no-underline text-[14px] font-semibold hover:text-white"
+              >Contact us</a
+            >
+            <a
+              href="#"
+              class="text-[#9a9a9a] no-underline text-[14px] font-semibold hover:text-white"
+              >Blog</a
+            >
+            <a
+              href="#"
+              class="text-[#9a9a9a] no-underline text-[14px] font-semibold hover:text-white"
+              >Waitlist</a
+            >
+            <a
+              href="#"
+              class="text-[#9a9a9a] no-underline text-[14px] font-semibold hover:text-white"
+              >Changelog</a
+            >
+            <a
+              href="#"
+              class="text-[#9a9a9a] no-underline text-[14px] font-semibold hover:text-white"
+              >Privacy Policy</a
+            >
+            <a
+              href="#"
+              class="text-[#9a9a9a] no-underline text-[14px] font-semibold hover:text-white"
+              >404</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="h-px bg-[#252525] mt-[60px] mb-[30px]"></div>
+
+      <div class="text-center text-[#9a9a9a] text-[14px]">
+        Designed by <strong class="text-white">Webetsica</strong>, Powered by
+        <strong class="text-white">Framer</strong>
+      </div>
+    </footer>
+  </body>
+</html>
